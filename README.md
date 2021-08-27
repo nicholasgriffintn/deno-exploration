@@ -55,17 +55,17 @@ Data to send:
 
 ## Pros
 
-- Very similar to Express in it's syntax so it's simple to get started with if you know Express.
+- Very similar to Express in its syntax so it's simple to get started with if you know Express.
 
 - Deno can be considered more lightweight than Express as a lot of the boilerplate requires additional packages.
 
 - Deno requires certain variables to be included in the start command for allowing access to things that may require more security, like being able to read files.
 
-- In general the permissions are verty good, more about those can be found here: https://deno.land/manual/getting_started/permissions
+- In general the permissions are very good, more about those can be found here: https://deno.land/manual/getting_started/permissions
 
 - There's a decent amount of middleware available for core functionality like GraphQL: https://deno.land/x/gql@0.2.1
 
-- Deno could be run on AWS Lambda looking at various projects, there's even a middleware for it here: https://github.com/hayd/deno-lambda
+- Deno could be run on AWS Lambda looking at various projects, there's even a runtime for it here: https://github.com/hayd/deno-lambda
 
 ## Cons
 
