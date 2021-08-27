@@ -67,6 +67,8 @@ Data to send:
 
 - Deno could be run on AWS Lambda looking at various projects, there's even a runtime for it here: https://github.com/hayd/deno-lambda
 
+- Both Node.js and Deno use the V8 engine
+
 ## Cons
 
 - Tools like AWS Lambda natively support Node, not Deno, outside of custom runtimes.
@@ -83,8 +85,14 @@ Data to send:
 
 - Getting data from the body within a post API is slightly more complex than Express by default, although there may be a middleware that makes this easier.
 
+- For CPU intensive operations, Node.js is deemed to be much faster than Deno, as shown in this example: https://choubey.medium.com/performance-comparison-deno-vs-node-js-part-4-https-form-data-base-64-decode-e9dac99c00c7
+
 ## Pros / Cons
 
-- Deno is considered performant, with some saying that it is more performant than Node.js: https://deno.land/benchmarks, however, some are also saying that Node.js is more performant, so it probably depends on experience.
+- Deno is considered performant, with some saying that it is more performant than Node.js: https://deno.land/benchmarks, however, some are also saying that Node.js is more performant, so it probably depends on experience. This article talks about performace with a simple app, comparing concurrency changes: https://choubey.medium.com/performance-comparison-deno-vs-node-js-part-1-hello-world-3f3b26dd98b9. It concludes that it is faster in this case at high load, however, not but a lot and these are simple examples.
+
+In an example comparing oak to express, oak is significantly faster here: https://choubey.medium.com/performance-comparison-deno-vs-node-js-part-2-https-hello-name-be84f0afd053
+
+This is a similar case in this example: https://choubey.medium.com/performance-comparison-deno-vs-node-js-part-2-redis-regex-uuid-d69f235a848c however, it's not as dramatic of a difference
 
 - Type checking appears to run at compile time, which may result in slower deployments, however checking outside of runtime may appear to be a benefit to some.
