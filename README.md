@@ -69,6 +69,12 @@ Data to send:
 
 - Both Node.js and Deno use the V8 engine
 
+- Built on typescript and you don't need to manually configure an environment in order to work with Deno and TypeScript
+
+- Browser based APIs are built into Deno
+
+- Because it doesn't use NPM, there's no massive node_modules folder to worry about.
+
 ## Cons
 
 - Tools like AWS Lambda natively support Node, not Deno, outside of custom runtimes.
