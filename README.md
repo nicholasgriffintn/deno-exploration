@@ -61,7 +61,15 @@ Data to send:
 
 - Deno requires certain variables to be included in the start command for allowing access to things that may require more security, like being able to read files.
 
+- In general the permissions are verty good, more about those can be found here: https://deno.land/manual/getting_started/permissions
+
+- There's a decent amount of middleware available for core functionality like GraphQL: https://deno.land/x/gql@0.2.1
+
+- Deno could be run on AWS Lambda looking at various projects, there's even a middleware for it here: https://github.com/hayd/deno-lambda
+
 ## Cons
+
+- Tools like AWS Lambda natively support Node, not Deno, outside of custom runtimes.
 
 - Importing modules does not use NPM so it's a bit different to what you might be used to, instead, you import external packages using URLs, local packages work the same as usual.
 
@@ -74,3 +82,9 @@ Data to send:
 - The Oak middleware is a bit trickier to setup than similar middlewares on Express
 
 - Getting data from the body within a post API is slightly more complex than Express by default, although there may be a middleware that makes this easier.
+
+## Pros / Cons
+
+- Deno is considered performant, with some saying that it is more performant than Node.js: https://deno.land/benchmarks, however, some are also saying that Node.js is more performant, so it probably depends on experience.
+
+- Type checking appears to run at compile time, which may result in slower deployments, however checking outside of runtime may appear to be a benefit to some.
