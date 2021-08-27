@@ -79,6 +79,8 @@ Data to send:
 
 - Because it doesn't use NPM, there's no massive node_modules folder to worry about.
 
+- Deno has a built in test runner: https://deno.land/manual/testing, however you can pull in mocha if you prefer
+
 ## Cons
 
 - Tools like AWS Lambda natively support Node, not Deno, outside of custom runtimes.
