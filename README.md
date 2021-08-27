@@ -14,6 +14,10 @@ Once installed, Deno can be started by using the `deno run` command, like so:
 
 `deno run --allow-net --allow-read src/server.tsx`.
 
+Run the following command to start the local server:
+
+`npm run start`
+
 ## Oak middleware
 
 For HTTP responses, there is a middleware called Oak that will allow you to create an Application in a similar fashion to Koa, the Github for this can be found here: https://github.com/oakserver/oak
