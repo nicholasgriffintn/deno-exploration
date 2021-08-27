@@ -2,6 +2,7 @@ const movies = new Map<string, any>([
   [
     '287947',
     {
+      id: 287947,
       title: 'Shazam!',
       poster: 'https://image.tmdb.org/t/p/w500/xnopI5Xtky18MPhK40cZAGAOVeV.jpg',
       overview:
@@ -13,6 +14,7 @@ const movies = new Map<string, any>([
   [
     '485811',
     {
+      id: 485811,
       title: 'Redcon-1',
       poster: 'https://image.tmdb.org/t/p/w500/vVPrWngVJ2cfYAncBedQty69Dlf.jpg',
       overview:
@@ -24,6 +26,7 @@ const movies = new Map<string, any>([
   [
     '537915',
     {
+      id: 537915,
       title: 'After',
       poster: 'https://image.tmdb.org/t/p/w500/u3B2YKUjWABcxXZ6Nm9h10hLUbh.jpg',
       overview:

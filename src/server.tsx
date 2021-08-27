@@ -5,7 +5,12 @@ import {
   Status,
   send,
 } from 'https://deno.land/x/oak/mod.ts';
-import movies from './data/movies.tsx';
+
+import { React, ReactDOMServer } from './dependencies/react.ts';
+
+import App from './app.tsx';
+
+import movies from './data/movies.ts';
 
 // Application setup
 const app = new Application();
@@ -26,11 +31,33 @@ app.use(async (ctx, next) => {
   ctx.response.headers.set('X-Response-Time', `${ms}ms`);
 });
 
+// React bundled middleware
+const browserBundlePath = '/browser.js';
+
 // Main router
 const router = new Router();
 
 // Homepage
 router.get('/', async (context) => {
+  const useReact = await context.request.url.searchParams.get('useReact');
+
+  console.log(useReact);
+
+  if (useReact === 'true') {
+    const html = `<html><head><script type="module" src="${browserBundlePath}"></script><style>* { font-family: Helvetica; }</style></head><body>${(
+      ReactDOMServer as any
+    ).renderToString(<App />)}</body></html>`;
+
+    if (html) {
+      context.response.status = 200;
+      context.response.body = html;
+      return;
+    }
+
+    context.response.status = 500;
+    context.response.body = { message: 'Something Unexpected Happened' };
+    return;
+  }
   await send(context, context.request.url.pathname, {
     root: `${Deno.cwd()}/src/views`,
     index: 'index.html',
@@ -42,17 +69,20 @@ router
   .get('/api/movies', async (context) => {
     context.response.type = 'json';
     context.response.body = Array.from(movies.values());
+    return;
   })
   .get('/api/movies/:id', async (context) => {
     if (context.params && context.params.id && movies.has(context.params.id)) {
       context.response.type = 'json';
       context.response.body = movies.get(context.params.id);
+      return;
     } else {
       context.response.status = Status.NotFound;
       context.response.type = 'json';
       context.response.body = {
         message: '404 - Movie not found',
       };
+      return;
     }
   })
   .post('/api/movies', async (context) => {
@@ -93,6 +123,7 @@ router.get('/(.*)', async (context) => {
   context.response.body = {
     message: '404 - Route Not Found',
   };
+  return;
 });
 
 // Add router to app

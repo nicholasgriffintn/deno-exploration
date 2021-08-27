@@ -2,7 +2,7 @@
   "name": "deno-land",
   "version": "1.0.0",
   "description": "Just an app to explore deno",
-  "main": "src/server.tsx",
+  "main": "src/server.ts",
   "scripts": {
     "start": "deno run --allow-net --allow-read src/server.tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
