@@ -73,4 +73,4 @@ Data to send:
 
 - The Oak middleware is a bit trickier to setup than similar middlewares on Express
 
-- Getting data from the body within a post API is slightly more complex than Express by default, although there may be a router that makes this easier.
+- Getting data from the body within a post API is slightly more complex than Express by default, although there may be a middleware that makes this easier.
