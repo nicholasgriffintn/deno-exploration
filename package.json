@@ -4,7 +4,7 @@
   "description": "Just an app to explore deno",
   "main": "src/server.tsx",
   "scripts": {
-    "start": "deno run --allow-net src/server.tsx",
+    "start": "deno run --allow-net --allow-read src/server.tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
