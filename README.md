@@ -35,3 +35,5 @@ For HTTP responses, there is a middleware called Oak that will allow you to crea
 - Support for third-party packages is okay but not as great as the support for the Node platoform, especially when making static sites or SSR sites, where things like Next.JS work really well for.
 
 - The Oak middleware is a bit trickier to setup than similar middlewares on Express
+
+- Getting data from the body within a post API is slightly more complex than Express by default, although there may be a router that makes this easier.
